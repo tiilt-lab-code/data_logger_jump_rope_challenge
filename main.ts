@@ -10,9 +10,6 @@ input.onButtonPressed(Button.B, function () {
 let running = false
 running = false
 datalogger.includeTimestamp(FlashLogTimeStampFormat.Milliseconds)
-basic.forever(function () {
-	
-})
 loops.everyInterval(100, function () {
     if (running) {
         datalogger.log(
