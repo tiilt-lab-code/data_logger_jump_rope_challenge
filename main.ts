@@ -2,21 +2,25 @@ input.onButtonPressed(Button.A, function () {
     running = true
 })
 input.onButtonPressed(Button.AB, function () {
-    if (reset == 0) {
-        reset_timer = input.runningTime()
-    }
+    reset_timer = input.runningTime()
     if (reset == 1) {
-        if (input.runningTime() - reset_timer <= 3000) {
-            datalogger.deleteLog()
-            basic.showLeds(`
-                # . . . #
-                . # # # .
-                . . # . .
-                . # # # .
-                # . . . #
-                `)
-        }
+        datalogger.deleteLog()
+        basic.showLeds(`
+            # . . . #
+            . # # # .
+            . . # . .
+            . # # # .
+            # . . . #
+            `)
+        basic.pause(1000)
         reset = 0
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -30,7 +34,6 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 let reset_timer = 0
 let reset = 0
 let running = false
-input.calibrateCompass()
 running = false
 datalogger.includeTimestamp(FlashLogTimeStampFormat.Milliseconds)
 input.setAccelerometerRange(AcceleratorRange.TwoG)
