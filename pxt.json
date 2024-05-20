@@ -1,5 +1,5 @@
 {
-    "name": "data_logger_jump_rope_challenge",
+    "name": "data_logger_scavenger_hunt",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -16,7 +16,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "6.0.26",
+        "target": "6.0.28",
         "targetId": "microbit"
     },
     "supportedTargets": [
