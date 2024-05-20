@@ -2,16 +2,20 @@ input.onButtonPressed(Button.A, function () {
     running = true
 })
 input.onButtonPressed(Button.AB, function () {
-    reset_timer = input.runningTime()
+    if (reset == 0) {
+        reset_timer = input.runningTime()
+    }
     if (reset == 1) {
-        datalogger.deleteLog()
-        basic.showLeds(`
-            # . . . #
-            . # # # .
-            . . # . .
-            . # # # .
-            # . . . #
-            `)
+        if (input.runningTime() - reset_timer <= 3000) {
+            datalogger.deleteLog()
+            basic.showLeds(`
+                # . . . #
+                . # # # .
+                . . # . .
+                . # # # .
+                # . . . #
+                `)
+        }
         reset = 0
     }
 })
