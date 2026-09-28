@@ -1,13 +1,17 @@
 input.onButtonPressed(Button.A, function () {
     running = true
+    basic.showIcon(IconNames.Yes)
 })
 input.onButtonPressed(Button.AB, function () {
     datalogger.deleteLog()
+    basic.showIcon(IconNames.Surprised)
 })
 input.onButtonPressed(Button.B, function () {
     running = false
+    basic.showIcon(IconNames.No)
 })
 let running = false
+basic.showIcon(IconNames.No)
 running = false
 datalogger.includeTimestamp(FlashLogTimeStampFormat.Milliseconds)
 loops.everyInterval(100, function () {
